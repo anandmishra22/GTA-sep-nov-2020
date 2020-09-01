@@ -1,0 +1,136 @@
+%%%%% Change the four parameters in the line below:
+% First is lecture #.
+% Second is lecture title.
+% Third is lecturer (either Anupam Gupta or Ryan O'Donnell).
+% Fourth is your name.
+\lecture{42}{LPs and SDPs are great}{Anupam O'Donnell}{Harry Bovik}
+
+
+
+
+
+This is some warmup discussion before the first section.
+
+\section{Here's a section header}
+
+Here's some more text.
+% Here's a citation~\cite{Kar84a}.
+
+\subsection{Here's a subsection}
+
+You might like to put use subsectioning these too.  An alternate way to put in a small subheading for a paragraph is to use the \begin{verbatim} \paragraph \end{verbatim} command.  For example:
+
+\paragraph{A remembrance by Dantzig.}  The early days were full of intense excitement. Scientists, free at last from war-time pressures, entered the post-war period hungry for new areas of research. The computer came on the scene at just the right time. Economists and mathematicians were intrigued with the possibility that the fundamental problem of optimal allocation of scarce resources could be numerically solved. Not too long after my first meeting with Tucker there was a meeting of the Econometric Society in Wisconsin attended by well-known statisticians and mathematicians like Hotelling and von Neumann, and economists like Koopmans. I was a young unknown and I remember how frightened I was at the idea of presenting for the first time to such a distinguished audience, the concept of linear programming.
+
+
+
+\section{Math stuff}
+
+Please make an effort to typeset things nicely.  There are quite a few macros in the lpsdp.sty file.  Below are illustrated how to do some basic things; please study the \LaTeX\ carefully.
+
+Here's a typical LP in standard/equational form, with an equation number on one of the constraints.
+\begin{gather}
+    \min \quad c^\top x                       \nonumber\\
+    \begin{align}
+        \text{s.t.} \quad   Ax &= b           \nonumber\\
+                             x &\geq 0       \label{eqn:nonnegative}
+    \end{align}
+\end{gather}
+
+\noindent Here's a reference to the~\eqref{eqn:nonnegative} nonnegativity constraint.  Some more LPs:
+
+\begin{gather*}
+    \min \quad 3x_1 - 5x_2 \\
+    \begin{aligned}
+        \text{s.t.} \quad   x_1 + 2x_2 &\leq 6\\
+                            2x_1 + x_2 &\leq 6\\
+                            2x_1 + 2x_2 &\geq 7\\
+                            x_1,x_2 &\geq 0
+    \end{aligned}
+\end{gather*}
+
+\begin{alignat*}{3}
+    \text{minimize}&   \quad & 3x_1 - 5x_2 + 2x_3 - x_4&       & &\\
+    \text{subject to}& \quad & x_1 + 2x_2 - 4x_3 + x_4 &\leq 6 & &\\
+                           & & -x_1 + 3x_2 - x_3 - x_4 &\geq 7 & &\\
+                           & & x_i &\geq 0  & &\quad \forall i = 1\dots 4
+\end{alignat*}
+
+
+Let's do some matrices:
+\[
+\begin{pmatrix}
+    1 & \rho & \rho\\
+    \rho & 1 & \rho\\
+    \rho & \rho & 1\\
+\end{pmatrix},
+\quad \text{or alternately,} \quad
+\begin{bmatrix}
+    1 & 2 \\
+    3 & 4 \\
+\end{bmatrix}.
+\]
+More generically:
+\[
+    A = \begin{bmatrix}
+            \vrule & \vrule & & \vrule\\
+            A_{1} & A_{2} & \cdots & A_{n} \\
+            \vrule & \vrule & & \vrule
+        \end{bmatrix}
+      = \begin{bmatrix}
+            \text{---} & a_1 & \text{---} \\
+            \text{---} & a_1 & \text{---} \\
+                       & \vdots &  \\
+            \text{---} & a_n & \text{---} 
+        \end{bmatrix}
+\]
+
+
+Here's some more random typesetting: 
+\begin{itemize}
+\item ``$\PTIME$~vs.~$\NP$, where the former means time $\poly(n)$'';
+\item $\wt{O}(f(x)) \text{ is } f(x) \cdot \polylog(f(x))$;
+\item $\displaystyle 
+        g(x) = \begin{cases}
+                   \sin(2\theta) & \text{if $\theta \leq \pi$,}\\
+                   \max\{\cos^2\theta, \tfrac13\} & \text{if $\theta > \pi$.}
+               \end{cases}
+      $
+      
+\end{itemize}
+Please don't write $max(A)$ when you mean $\max(A)$, or $log(n)$ when you mean $\log(n)$, or "quotes" when you mean ``quotes''.\\
+
+A theorem and a proof:
+\begin{theorem} $(a+b)^2 = a^2 + 2ab + b^2$.
+\end{theorem}
+\begin{proof}
+Let for the reader.
+\end{proof}
+
+\bigskip
+
+Here's what to do if your proof ends on an equation:
+\begin{proof}
+It's easy:
+\[
+    (a+b)^2 = (a+b)(a+b) = (a+b)a + (a+b)b = a^2 + ba + ab + b^2 = a^2 + 2ab + b^2 \qedhere
+\]
+\end{proof}
+
+Please insert figures liberally.  It's probably best if ``vector graphics'' are in pdf or png format, and ``bitmap graphics'' are in jpg format, but lots formats are supported.  There's a macro defined to make things easy.  Inkscape is a pretty reasonable, free program in which to draw figures.\footnote{Ryan: I admit, I sometimes draw figures in Powerpoint.}
+ 
+%%%%%%%% FIGURES
+% first parameter is a real number which is the scale factor; 
+% second is the file name; 
+% third is caption; 
+% fourth gives the LaTeX label for future \ref
+\myfig{.375}{example-figure.pdf}{The region $g_1 > 0, g_2 > -\tfrac{\rho}{\sqrt{1-\rho^2}}g_1$.}{fig:my-example}
+
+Once you've inserted it, you can refer to it as Figure~\ref{fig:my-example}.\\
+
+Finally, if you have citations, see the commented-out stuff in the \LaTeX~here.
+
+%%%%%%%%%%% If you have citations then uncomment the line below:
+%
+%\insertbibliography{lpsdp}
+
