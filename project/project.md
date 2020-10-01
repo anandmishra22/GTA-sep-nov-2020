@@ -79,14 +79,21 @@ Contact:
 References
 -------------
 [1] Vladimir Kolmogorov, Ramin Zabih:What Energy Functions Can Be Minimized via Graph Cuts? IEEE Trans. Pattern Anal. Mach. Intell. 26(2): 147-159 (2004)
+
 [2] Yuri Boykov, Vladimir Kolmogorov:An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization in Vision. IEEE Trans. Pattern Anal. Mach. Intell. 26(9): 1124-1137 (2004)
+
 [3] Quan Wang, Zhendong Mao, Bin Wang, Li Guo:Knowledge Graph Embedding: A Survey of Approaches and Applications. IEEE Trans. Knowl. Data Eng. 29(12): 2724-2743 (2017)
+
 [4] László Babai: Graph Isomorphism in Quasipolynomial Time. CoRR abs/1512.03547 (2015)
 
 [5] http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf
+
 [6] https://www.di.ens.fr/willow/research/graphlearning/
+
 [7] https://www.coursera.org/learn/probabilistic-graphical-models#syllabus
+
 [8] https://github.com/benedekrozemberczki/SimGNN
+
 [9] https://cs.stanford.edu/~jure/pubs/node2vec-kdd16.pdf
 
 
